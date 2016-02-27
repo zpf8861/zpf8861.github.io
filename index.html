@@ -102,7 +102,7 @@
 							
 								<a class="github" target="_blank" href="https://github.com/zpf8861" title="github">github</a>
 					        
-								<a class="mail" target="_blank" href="/zpf8861@163.com" title="mail">mail</a>
+								<a class="mail" target="_blank" href="mail://zpf8861@163.com" title="mail">mail</a>
 					        
 						</div>
 					</nav>
@@ -111,7 +111,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a>
+						<a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/语音/" style="font-size: 20px;">语音</a>
 					</div>
 				</section>
 				
@@ -122,7 +122,7 @@
 				
 				<section class="switch-part switch-part3">
 				
-					<div id="js-aboutme">我是赵鹏飞，目前在百度工作，负责android、php等方向的移动产品研发。爱跑步、爱走路、爱篮球~</div>
+					<div id="js-aboutme">2011级北航研究生，目前在百度工作，负责android、php等方向的移动产品研发。平时喜欢跑步、喜欢瞎溜达，当然最热爱的还是篮球~ Email：zpf8861@163.com</div>
 				</section>
 				
 			</div>
@@ -171,7 +171,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/zpf8861" title="github">github</a>
 			        
-						<a class="mail" target="_blank" href="/zpf8861@163.com" title="mail">mail</a>
+						<a class="mail" target="_blank" href="mail://zpf8861@163.com" title="mail">mail</a>
 			        
 				</div>
 			</nav>
@@ -181,11 +181,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-Android2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-关于自己" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/27/Android2/" class="article-date">
-  	<time datetime="2016-02-26T17:38:38.965Z" itemprop="datePublished">2016-02-27</time>
+      <a href="/2016/02/27/关于自己/" class="article-date">
+  	<time datetime="2016-02-27T01:17:00.460Z" itemprop="datePublished">2016-02-27</time>
 </a>
     </div>
   
@@ -198,7 +198,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/27/Android2/">Android1</a>
+      <a class="article-title" href="/2016/02/27/关于自己/">关于自己</a>
     </h1>
   
 
@@ -207,29 +207,66 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>有很多种方法可以写博客，一般最开始使用的是类似CSDN的博客网站，然后你会希望拥有一个自己的服务器去维护博客，这种方法不错，但是需要付出一定的金钱，并且需要承担一部分运维工作。<br>当然，像本文这样，将写博客当作提交代码一样，既方便使用又容易维护，只需要前期简单的配置博客的环境。<br>github是什么，不需要过多介绍，[HEXO]是什么，大家可以去点击连接去看下官网。<br>下面介绍如何快速的在github上搭建HEXO博客框架。</p>
-<h2 id="步骤概述"><a href="#步骤概述" class="headerlink" title="步骤概述"></a>步骤概述</h2><p>按照下面顺序会很清晰快捷的完成搭建工作</p>
-<ul>
-<li><p>在github上设置ssh密匙</p>
-</li>
-<li><p>在github上建立一个空的仓库，并且clone到本地一个文件夹</p>
-</li>
-<li><p>尝试进行提交readme.md文件，如果成功证明ssh密匙设置正确</p>
-</li>
-<li><p>安装HEXO环境，初始化一个工程</p>
-</li>
-<li><p>修改根目录下的配置文件_config.yml 尤其是</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:zpf8861/zpf8861.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<ul>
-<li>之后分别使用</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment">#generate</span></span><br><span class="line">hexo d <span class="comment">#deploy</span></span><br></pre></td></tr></table></figure>
-<p>将工程部署到github</p>
-<ul>
-<li>以上步骤成功后则可以修改主题，美化自己的界面了</li>
-</ul>
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/随笔/">随笔</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-实现Android语音识别服务接口 RecognitionService的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/27/实现Android语音识别服务接口 RecognitionService的方法/" class="article-date">
+  	<time datetime="2016-02-27T00:59:07.613Z" itemprop="datePublished">2016-02-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/27/实现Android语音识别服务接口 RecognitionService的方法/">实现Android语音识别服务接口 RecognitionService的方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前的一篇文章介绍过SpeechRecognizer类，该类可以作为对外的一个接口，并通过Intent传递一个ComponentName获取可支持语音识别的功能的服务，一般的用户手机中如果安装了语音识别的一些软件，就会拥有这样的能力，但是如果开发者希望自己通过某公司的sdk集成自己的语音识别服务，那么就需要实现RecognitionService这个类。<br>这个类是个抽象类，需要开发者完成其中的几个抽象方法。下面的代码注释中对每个方法进行了说明。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BDRecognitionService</span> <span class="keyword">extends</span> <span class="title">RecognitionService</span> </span>&#123;  </span><br><span class="line">     </span><br><span class="line">    <span class="annotation">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">super</span>.onCreate();  </span><br><span class="line">        <span class="comment">// 在调用服务时进行一次  </span></span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="annotation">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStartListening</span><span class="params">(Intent recognizerIntent, Callback mCallback)</span> </span>&#123;  </span><br><span class="line">      <span class="comment">//这个方法具体实现了第三方sdk的接入，  </span></span><br><span class="line">  </span><br><span class="line"> <span class="comment">//recognizerIntent 携带了上层传入的参数  </span></span><br><span class="line"><span class="comment">//mCallback 需要将第三方sdk的结果回调给该接口，是上层与第三方sdk的桥梁  </span></span><br><span class="line">&#125; <span class="annotation">@Override</span>   </span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCancel</span><span class="params">(Callback listener)</span>  </span><br><span class="line"> </span>&#123; <span class="comment">//注销 &#125;   </span></span><br><span class="line"><span class="annotation">@Override</span>   </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span>   </span><br><span class="line"></span>&#123; <span class="comment">//销毁 super.onDestroy(); &#125;   </span></span><br><span class="line"><span class="annotation">@Override</span>  </span><br><span class="line"> <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStopListening</span><span class="params">(Callback listener)</span>   </span><br><span class="line"></span>&#123; <span class="comment">//暂停 &#125;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>Callback的的接口有以下几个</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Callback</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> IRecognitionListener mListener;  </span><br><span class="line">  </span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">Callback</span><span class="params">(IRecognitionListener listener)</span> </span>&#123;  </span><br><span class="line">            mListener = listener;  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">          </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beginningOfSpeech</span><span class="params">()</span> <span class="keyword">throws</span> RemoteException </span>&#123;  </span><br><span class="line">            <span class="keyword">if</span> (DBG) Log.d(TAG, <span class="string">"beginningOfSpeech"</span>);  </span><br><span class="line">            mListener.onBeginningOfSpeech();  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bufferReceived</span><span class="params">(<span class="keyword">byte</span>[] buffer)</span> <span class="keyword">throws</span> RemoteException </span>&#123;  </span><br><span class="line">            mListener.onBufferReceived(buffer);  </span><br><span class="line">        &#125;  </span><br><span class="line">          </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">error</span><span class="params">(<span class="keyword">int</span> error)</span> <span class="keyword">throws</span> RemoteException </span>&#123;  </span><br><span class="line">            Message.obtain(mHandler, MSG_RESET).sendToTarget();  </span><br><span class="line">            mListener.onError(error);  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">         </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">partialResults</span><span class="params">(Bundle partialResults)</span> <span class="keyword">throws</span> RemoteException </span>&#123;  </span><br><span class="line">            mListener.onPartialResults(partialResults);  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">         </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readyForSpeech</span><span class="params">(Bundle params)</span> <span class="keyword">throws</span> RemoteException </span>&#123;  </span><br><span class="line">            mListener.onReadyForSpeech(params);  </span><br><span class="line">        &#125;  </span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">results</span><span class="params">(Bundle results)</span> <span class="keyword">throws</span> RemoteException </span>&#123;  </span><br><span class="line">            Message.obtain(mHandler, MSG_RESET).sendToTarget();  </span><br><span class="line">            mListener.onResults(results);  </span><br><span class="line">        &#125;  </span><br><span class="line">          </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rmsChanged</span><span class="params">(<span class="keyword">float</span> rmsdB)</span> <span class="keyword">throws</span> RemoteException </span>&#123;  </span><br><span class="line">            mListener.onRmsChanged(rmsdB);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -238,7 +275,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/语音/">语音</a></li></ul>
 	</div>
 
       
@@ -264,11 +301,11 @@
 
 
   
-    <article id="post-Android" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Android语音识别功能使用总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/27/Android/" class="article-date">
-  	<time datetime="2016-02-26T17:38:33.376Z" itemprop="datePublished">2016-02-27</time>
+      <a href="/2016/02/27/Android语音识别功能使用总结/" class="article-date">
+  	<time datetime="2016-02-27T00:52:54.011Z" itemprop="datePublished">2016-02-27</time>
 </a>
     </div>
   
@@ -281,7 +318,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/27/Android/">android2</a>
+      <a class="article-title" href="/2016/02/27/Android语音识别功能使用总结/">Android语音识别功能使用总结</a>
     </h1>
   
 
@@ -290,29 +327,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>有很多种方法可以写博客，一般最开始使用的是类似CSDN的博客网站，然后你会希望拥有一个自己的服务器去维护博客，这种方法不错，但是需要付出一定的金钱，并且需要承担一部分运维工作。<br>当然，像本文这样，将写博客当作提交代码一样，既方便使用又容易维护，只需要前期简单的配置博客的环境。<br>github是什么，不需要过多介绍，[HEXO]是什么，大家可以去点击连接去看下官网。<br>下面介绍如何快速的在github上搭建HEXO博客框架。</p>
-<h2 id="步骤概述"><a href="#步骤概述" class="headerlink" title="步骤概述"></a>步骤概述</h2><p>按照下面顺序会很清晰快捷的完成搭建工作</p>
-<ul>
-<li><p>在github上设置ssh密匙</p>
-</li>
-<li><p>在github上建立一个空的仓库，并且clone到本地一个文件夹</p>
-</li>
-<li><p>尝试进行提交readme.md文件，如果成功证明ssh密匙设置正确</p>
-</li>
-<li><p>安装HEXO环境，初始化一个工程</p>
-</li>
-<li><p>修改根目录下的配置文件_config.yml 尤其是</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:zpf8861/zpf8861.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<ul>
-<li>之后分别使用</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment">#generate</span></span><br><span class="line">hexo d <span class="comment">#deploy</span></span><br></pre></td></tr></table></figure>
-<p>将工程部署到github</p>
-<ul>
-<li>以上步骤成功后则可以修改主题，美化自己的界面了</li>
-</ul>
+        <p>Android引入了对语音识别的支持。语音识别主要位于android.speech包中，主要的类包括SpeechRecognizer、RecognitionService、RecognizerIntent、RecognizerResultsIntent、RecognitionListener等类和接口。<br>SpeechRecognizer提供了接入语音识别服务的接口，下面是SpeechRecognizer的常用方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">createSpeechRecognizer()    <span class="comment">//创建语音识别器</span></span><br><span class="line">setRecognitionListener()    <span class="comment">//设置监听器</span></span><br><span class="line">startListening()    <span class="comment">//开始语音识别</span></span><br><span class="line">stopListening()    <span class="comment">//结束语音识别</span></span><br></pre></td></tr></table></figure>
+<p>语音识别要求”android.permission.RECORD_AUDIO”权限。<br>为了进行语音识别，首先需要发布一个语音识别的Activity，然后系统会启动语音识别引擎，并对用户的语音进行处理，处理的结果将会通过onActivityResult()方法被返回。下面是Android中的一个实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SpeechRecognizer sr = SpeechRecognizer.createSpeechRecognizer(<span class="keyword">this</span>, <span class="keyword">new</span> ComponentName(getPackageName(),</span><br><span class="line">                BDRecognitionService.class.getName()));</span><br><span class="line">        sr.setRecognitionListener(<span class="keyword">new</span> listener());</span><br><span class="line">        sr.startListening(<span class="keyword">new</span> Intent(getIntent().getAction()).putExtras(getIntent()));</span><br></pre></td></tr></table></figure>
+<p>回调方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">listener</span> <span class="keyword">implements</span> <span class="title">RecognitionListener</span></span>&#123;</span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReadyForSpeech</span><span class="params">(Bundle params)</span> </span>&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBeginningOfSpeech</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRmsChanged</span><span class="params">(<span class="keyword">float</span> rmsdB)</span> </span>&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBufferReceived</span><span class="params">(<span class="keyword">byte</span>[] buffer)</span> </span>&#123;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEndOfSpeech</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(<span class="keyword">int</span> error)</span> </span>&#123;</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResults</span><span class="params">(Bundle results)</span> </span>&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//具体处理识别结果</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPartialResults</span><span class="params">(Bundle partialResults)</span> </span>&#123;</span><br><span class="line">          </span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEvent</span><span class="params">(<span class="keyword">int</span> eventType, Bundle params)</span> </span>&#123;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>注意：android虽然提供了该接口，但是没有提供具体的识别功能<br>new ComponentName(getPackageName()，BDRecognitionService.class.getName())<br>因此实例化时的参数指定了具体实现功能的service，这就需要开发者实现RecognitionService这个服务接口，下一篇文章将介绍如何实现该类。</p>
 
       
     </div>
@@ -321,7 +342,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/语音/">语音</a></li></ul>
 	</div>
 
       
@@ -410,85 +431,6 @@
       
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/环境搭建/">环境搭建</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-关于自己" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/27/关于自己/" class="article-date">
-  	<time datetime="2016-02-26T17:37:49.428Z" itemprop="datePublished">2016-02-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/27/关于自己/">关于自己</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有很多种方法可以写博客，一般最开始使用的是类似CSDN的博客网站，然后你会希望拥有一个自己的服务器去维护博客，这种方法不错，但是需要付出一定的金钱，并且需要承担一部分运维工作。<br>当然，像本文这样，将写博客当作提交代码一样，既方便使用又容易维护，只需要前期简单的配置博客的环境。<br>github是什么，不需要过多介绍，[HEXO]是什么，大家可以去点击连接去看下官网。<br>下面介绍如何快速的在github上搭建HEXO博客框架。</p>
-<h2 id="步骤概述"><a href="#步骤概述" class="headerlink" title="步骤概述"></a>步骤概述</h2><p>按照下面顺序会很清晰快捷的完成搭建工作</p>
-<ul>
-<li><p>在github上设置ssh密匙</p>
-</li>
-<li><p>在github上建立一个空的仓库，并且clone到本地一个文件夹</p>
-</li>
-<li><p>尝试进行提交readme.md文件，如果成功证明ssh密匙设置正确</p>
-</li>
-<li><p>安装HEXO环境，初始化一个工程</p>
-</li>
-<li><p>修改根目录下的配置文件_config.yml 尤其是</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:zpf8861/zpf8861.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<ul>
-<li>之后分别使用</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment">#generate</span></span><br><span class="line">hexo d <span class="comment">#deploy</span></span><br></pre></td></tr></table></figure>
-<p>将工程部署到github</p>
-<ul>
-<li>以上步骤成功后则可以修改主题，美化自己的界面了</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
 	</div>
 
 
