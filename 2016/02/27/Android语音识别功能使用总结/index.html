@@ -1,17 +1,17 @@
 
-<!DOCTYPE html>
-<html>
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <title>Android语音识别功能使用总结 | 赵鹏飞</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Set render engine for 360 browser -->
-  <meta name="renderer" content="webkit">
-  <!-- No Baidu Siteapp-->
-  <meta http-equiv="Cache-Control" content="no-siteapp"/>
-  <meta name="description" content="Android引入了对语音识别的支持。语音识别主要位于android.speech包中，主要的类包括SpeechRecognizer、RecognitionService、RecognizerIntent、RecognizerResultsIntent、RecognitionListener等类和接口。SpeechRecognizer提供了接入语音识别服务的接口，下面是SpeechRecogniz">
+    <title>Android语音识别功能使用总结 | 赵鹏飞</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="赵鹏飞">
+    
+
+    
+    <meta name="description" content="Android引入了对语音识别的支持。语音识别主要位于android.speech包中，主要的类包括SpeechRecognizer、RecognitionService、RecognizerIntent、RecognizerResultsIntent、RecognitionListener等类和接口。SpeechRecognizer提供了接入语音识别服务的接口，下面是SpeechRecogniz">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android语音识别功能使用总结">
 <meta property="og:url" content="http://zpf8861.github.com/2016/02/27/Android语音识别功能使用总结/index.html">
@@ -21,388 +21,441 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android语音识别功能使用总结">
 <meta name="twitter:description" content="Android引入了对语音识别的支持。语音识别主要位于android.speech包中，主要的类包括SpeechRecognizer、RecognitionService、RecognizerIntent、RecognizerResultsIntent、RecognitionListener等类和接口。SpeechRecognizer提供了接入语音识别服务的接口，下面是SpeechRecogniz">
-  
-  
-    <link rel="icon" href="/img/logo.png">
-    <meta name="mobile-web-app-capable" content="yes">
-    <!-- Add to homescreen for Chrome on Android -->    
-    <link rel="icon" sizes="192x192" href="/img/logo.png">
-    <!-- Add to homescreen for Safari on iOS -->
-    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">    
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="/img/logo.png">
-    <meta name="msapplication-TileColor" content="#0e90d2">
-  
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-  
-  
-<script type="text/javascript">
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?10f2720e6f47d1b4a5ebc811df8dc361";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
+    
+    <link rel="alternative" href="/atom.xml" title="赵鹏飞" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
-<body>
-<div id="container">
-  <div id="wrap">
-    <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">赵鹏飞</a>
-      </h1>
+
+  <body>
+    <header>
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">技术积累 生活随笔</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">首页</a>
-        
-          <a class="main-nav-link" href="/archives">文章</a>
-        
-          <a class="main-nav-link" href="/about">关于</a>
-        
-      </nav>
-      <!--
-      <nav id="sub-nav">
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
-          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
-          <input type="submit" value="" class="search-form-submit">
-          <input name=tn type=hidden value="bds">
-          <input name=cl type=hidden value="3">
-          <input name=ct type=hidden value="2097152">
-          <input type="hidden" name="si" value="zpf8861.github.com">
-        </form>
-      </div>
-      -->
-    </div>
-  </div>
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/me.png" alt="赵鹏飞" title="赵鹏飞"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="赵鹏飞">赵鹏飞</a></h1>
+				<h2 class="blog-motto">技术积累 生活随笔</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:zpf8861.github.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/02/27/Android语音识别功能使用总结/" title="Android语音识别功能使用总结" itemprop="url">Android语音识别功能使用总结</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="赵鹏飞" target="_blank" itemprop="author">赵鹏飞</a>
+		
+  <p class="article-time">
+    <time datetime="2016-02-27T00:52:54.011Z" itemprop="datePublished"> 发表于 2016-02-27</time>
+    
+  </p>
 </header>
-    <div class="outer">
-      <section id="main"><article id="post-Android语音识别功能使用总结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/27/Android语音识别功能使用总结/" class="article-date">
-  <time datetime="2016-02-27T00:52:54.011Z" itemprop="datePublished">2016-02-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Android语音识别功能使用总结
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p>Android引入了对语音识别的支持。语音识别主要位于android.speech包中，主要的类包括SpeechRecognizer、RecognitionService、RecognizerIntent、RecognizerResultsIntent、RecognitionListener等类和接口。<br>SpeechRecognizer提供了接入语音识别服务的接口，下面是SpeechRecognizer的常用方法：</p>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			
+		
+		</div>
+		
+		<p>Android引入了对语音识别的支持。语音识别主要位于android.speech包中，主要的类包括SpeechRecognizer、RecognitionService、RecognizerIntent、RecognizerResultsIntent、RecognitionListener等类和接口。<br>SpeechRecognizer提供了接入语音识别服务的接口，下面是SpeechRecognizer的常用方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">createSpeechRecognizer()    <span class="comment">//创建语音识别器</span></span><br><span class="line">setRecognitionListener()    <span class="comment">//设置监听器</span></span><br><span class="line">startListening()    <span class="comment">//开始语音识别</span></span><br><span class="line">stopListening()    <span class="comment">//结束语音识别</span></span><br></pre></td></tr></table></figure>
 <p>语音识别要求”android.permission.RECORD_AUDIO”权限。<br>为了进行语音识别，首先需要发布一个语音识别的Activity，然后系统会启动语音识别引擎，并对用户的语音进行处理，处理的结果将会通过onActivityResult()方法被返回。下面是Android中的一个实现：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SpeechRecognizer sr = SpeechRecognizer.createSpeechRecognizer(<span class="keyword">this</span>, <span class="keyword">new</span> ComponentName(getPackageName(),</span><br><span class="line">                BDRecognitionService.class.getName()));</span><br><span class="line">        sr.setRecognitionListener(<span class="keyword">new</span> listener());</span><br><span class="line">        sr.startListening(<span class="keyword">new</span> Intent(getIntent().getAction()).putExtras(getIntent()));</span><br></pre></td></tr></table></figure>
 <p>回调方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">listener</span> <span class="keyword">implements</span> <span class="title">RecognitionListener</span></span>&#123;</span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReadyForSpeech</span><span class="params">(Bundle params)</span> </span>&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBeginningOfSpeech</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRmsChanged</span><span class="params">(<span class="keyword">float</span> rmsdB)</span> </span>&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBufferReceived</span><span class="params">(<span class="keyword">byte</span>[] buffer)</span> </span>&#123;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEndOfSpeech</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(<span class="keyword">int</span> error)</span> </span>&#123;</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResults</span><span class="params">(Bundle results)</span> </span>&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//具体处理识别结果</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPartialResults</span><span class="params">(Bundle partialResults)</span> </span>&#123;</span><br><span class="line">          </span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEvent</span><span class="params">(<span class="keyword">int</span> eventType, Bundle params)</span> </span>&#123;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>注意：android虽然提供了该接口，但是没有提供具体的识别功能<br>new ComponentName(getPackageName()，BDRecognitionService.class.getName())<br>因此实例化时的参数指定了具体实现功能的service，这就需要开发者实现RecognitionService这个服务接口，下一篇文章将介绍如何实现该类。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      
-      
-  <div class="article-statement">
-    <hr>  
-    1.除非注明，本博文章均为原创，转载请以链接形式标明本文地址。<br>
-    2.本博文章只代表博主当时的观点或结论，与博主公司没有任何关系。<br>
-    3.如果本文帮到了您，不妨点一下右下角的 <a>分享到</a> 按钮，或者 <a href='/about/index.html#zan-shang'>小额赞赏</a> 我。<br>
-    4.您的鼓励是博主写作最大的动力，感谢您的分享和赞赏，好人一生平安。<br>
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/语音/">语音</a>
   </div>
 
+</div>
 
 
-    </div>
-    
-    <footer class="article-footer">
-      
-        <a data-url="http://zpf8861.github.com/2016/02/27/Android语音识别功能使用总结/" data-id="cil5aahaz000h40pe615j397a" class="article-share-link" data-share="baidu">分享到</a>
-      
 
-      
-        <a href="http://zpf8861.github.com/2016/02/27/Android语音识别功能使用总结/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/语音/">语音</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/02/27/实现Android语音识别服务接口 RecognitionService的方法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">
-        
-          实现Android语音识别服务接口 RecognitionService的方法
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/02/27/利用github+HEXO搭建自己的博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">利用github+HEXO搭建自己的博客</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://zpf8861.github.com/2016/02/27/Android语音识别功能使用总结/" data-title="Android语音识别功能使用总结 | 赵鹏飞" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
 
 
-  <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2016/02/27/Android语音识别功能使用总结/" data-title="Android语音识别功能使用总结" data-url="http://zpf8861.github.com/2016/02/27/Android语音识别功能使用总结/"></div>
-  </section>
-</section>
-      
-      <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">推荐文章</h3>
-    <div class="widget">
-      <ul>
-        
-        
-          
-          <li>
-            <a href="/2015/09/02/dsoframer-introduction-resources/" target="_blank">1. DSOframer的简单介绍和资源整理</a>
-          </li>
-        
-          
-          <li>
-            <a href="/2015/09/11/dsoframer-frequently-asked-question2/" target="_blank">2. DSOframer微软官方API的查阅方法</a>
-          </li>
-        
-          
-          <li>
-            <a href="/2015/08/31/dsoframer-frequently-asked-question1/" target="_blank">3. DSOframer无法正常加载的解决方案</a>
-          </li>
-        
-          
-          <li>
-            <a href="/2012/02/15/office-pdf2image/" target="_blank">4. C#技术分享-PDF转图片的10种方法</a>
-          </li>
-        
-          
-          <li>
-            <a href="/2012/02/22/office-doc2image/" target="_blank">5. C#技术分享-DOC转图片的3种方法</a>
-          </li>
-        
-          
-          <li>
-            <a href="/2015/08/29/hexo-theme-landscape-plus-optimize/" target="_blank">6. Hexo 官方主题 landscape-plus 优化</a>
-          </li>
-        
-          
-          <li>
-            <a href="/2015/08/30/donet-opensource-stonefw-introduction/" target="_blank">7. DoNet开源项目-基于jQuery EasyUI的后台管理系统</a>
-          </li>
-        
-          
-          <li>
-            <a href="/2016/01/17/donet-opensource-dian-introduction/" target="_blank">8. DoNet开源项目-基于Amaze UI的点餐系统</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Android-Wear/" style="font-size: 10px;">Android Wear</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/语音/" style="font-size: 20px;">语音</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境搭建/">环境搭建</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年 02月</a><span class="archive-list-count">5</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">友情链接</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="http://weibo.com/605494869/" target="_blank">石佳劼的微博</a>
-          </li>
-        
-          <li>
-            <a href="http://www.zhihu.com/people/stone0090/" target="_blank">石佳劼的知乎</a>
-          </li>
-        
-          <li>
-            <a href="http://www.jianshu.com/users/0005893eaff9/latest_articles/" target="_blank">石佳劼的简书</a>
-          </li>
-        
-          <li>
-            <a href="http://blog.csdn.net/shi0090/" target="_blank">石佳劼的CSDN</a>
-          </li>
-        
-          <li>
-            <a href="http://www.cnblogs.com/shi0090/" target="_blank">石佳劼的博客园</a>
-          </li>
-        
-          <li>
-            <a href="https://github.com/stone0090/" target="_blank">石佳劼的GitHub</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最近评论</h3>
-    <div class="widget">
-      <!-- 多说最新评论 start -->
-      <div class="ds-recent-comments" data-num-items="5" data-show-avatars="0" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
-      <!-- 多说最新评论 end -->
-      <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-      <script type="text/javascript">
-        var duoshuoQuery = {short_name:"shijiajie"};
-        (function() {
-          var ds = document.createElement('script');
-          ds.type = 'text/javascript';ds.async = true;
-          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-          ds.charset = 'UTF-8';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-      </script>
-      <!-- 多说公共JS代码 end -->
-    </div>
-  </div>
-
-  
-</aside>
-      
-    </div>
-    <footer id="footer">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-  </script>
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      Copyright &copy; 2012 - 2016 <a href="/" target="_blank">赵鹏飞</a>.
-      &nbsp;|&nbsp;
-      <span id="busuanzi_container_site_pv">
-        总访问量 <a href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次
-      </span>
-      <span id="busuanzi_container_site_uv">
-        <a href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_uv"></span></a> 人.
-      </span>      
-    </div>
-  </div>
 </footer>
 
-  </div>
-  <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">文章</a>
-  
-    <a href="/about" class="mobile-nav-link">关于</a>
-  
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/02/27/实现Android语音识别服务接口 RecognitionService的方法/" title="实现Android语音识别服务接口 RecognitionService的方法">
+  <strong>上一篇：</strong><br/>
+  <span>
+  实现Android语音识别服务接口 RecognitionService的方法</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/02/27/利用github+HEXO搭建自己的博客/"  title="利用github+HEXO搭建自己的博客">
+ <strong>下一篇：</strong><br/> 
+ <span>利用github+HEXO搭建自己的博客
+</span>
+</a>
+</div>
+
 </nav>
-  <!-- totop start -->
-<div id="totop">
-<a title="返回顶部"><img src="/img/scrollup.png"/></a>
-</div>
 
-<!-- totop end -->
+	
 
-<!-- 多说公共js代码 start -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"shijiajie"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0]
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-<!-- 多说公共js代码 end -->
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
-
-<!-- 百度分享 start -->
-
-<div id="article-share-box" class="article-share-box">
-  <div id="bdshare" class="bdsharebuttonbox article-share-links">
-    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
-    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
-    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ 
+ 
   </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Android/" title="Android">Android<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/环境搭建/" title="环境搭建">环境搭建<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+		  
+		
+		</ul>
 </div>
-<script>window._bd_share_config={"common":{},"share":{"bdCustomStyle":"/css/bdshare.css"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-<!-- 百度分享 end -->
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 
-
-
-<script src="/js/script.js" type="text/javascript"></script>
-
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/语音/" title="语音">语音<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Android-Wear/" title="Android Wear">Android Wear<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+			
+		
+		</ul>
 </div>
-</body>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Zhao Pengfei in baidu. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/zpf8861" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="赵鹏飞">赵鹏飞</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
 </html>
