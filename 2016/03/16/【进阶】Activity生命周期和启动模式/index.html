@@ -4,23 +4,38 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>关于自己 | 赵鹏飞</title>
+    <title>【进阶】Activity生命周期和启动模式 | 赵鹏飞</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="赵鹏飞">
     
 
     
-    <meta name="description" content="Android php 篮球">
+    <meta name="description" content="#典型情况下生命周期
+1. onCreate：做初始化操作，如界面布局资源、所需数据
+2. onRestart：从不可见到可见状态时调用
+3. onStart：正在被启动，已经可见了，但是还没有交互功能。即Activity显示出来了但是我们看不到
+4. onResume：表示Activity已经可见并到了前台
+5. onPause：可以做数据的存储、动画停止操作，但是不能耗时，因为后面的Activ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于自己">
-<meta property="og:url" content="http://zpf8861.github.com/2016/02/27/关于自己/index.html">
+<meta property="og:title" content="【进阶】Activity生命周期和启动模式">
+<meta property="og:url" content="http://zpf8861.github.com/2016/03/16/【进阶】Activity生命周期和启动模式/index.html">
 <meta property="og:site_name" content="赵鹏飞">
-<meta property="og:description" content="Android php 篮球">
-<meta property="og:updated_time" content="2016-02-27T01:17:00.460Z">
+<meta property="og:description" content="#典型情况下生命周期
+1. onCreate：做初始化操作，如界面布局资源、所需数据
+2. onRestart：从不可见到可见状态时调用
+3. onStart：正在被启动，已经可见了，但是还没有交互功能。即Activity显示出来了但是我们看不到
+4. onResume：表示Activity已经可见并到了前台
+5. onPause：可以做数据的存储、动画停止操作，但是不能耗时，因为后面的Activ">
+<meta property="og:updated_time" content="2016-03-16T04:03:31.097Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于自己">
-<meta name="twitter:description" content="Android php 篮球">
+<meta name="twitter:title" content="【进阶】Activity生命周期和启动模式">
+<meta name="twitter:description" content="#典型情况下生命周期
+1. onCreate：做初始化操作，如界面布局资源、所需数据
+2. onRestart：从不可见到可见状态时调用
+3. onStart：正在被启动，已经可见了，但是还没有交互功能。即Activity显示出来了但是我们看不到
+4. onResume：表示Activity已经可见并到了前台
+5. onPause：可以做数据的存储、动画停止操作，但是不能耗时，因为后面的Activ">
 
     
     <link rel="alternative" href="/atom.xml" title="赵鹏飞" type="application/atom+xml">
@@ -80,14 +95,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/02/27/关于自己/" title="关于自己" itemprop="url">关于自己</a>
+      <a href="/2016/03/16/【进阶】Activity生命周期和启动模式/" title="【进阶】Activity生命周期和启动模式" itemprop="url">【进阶】Activity生命周期和启动模式</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="赵鹏飞" target="_blank" itemprop="author">赵鹏飞</a>
 		
   <p class="article-time">
-    <time datetime="2016-02-27T01:17:00.460Z" itemprop="datePublished"> 发表于 2016-02-27</time>
+    <time datetime="2016-03-16T04:03:31.097Z" itemprop="datePublished"> 发表于 2016-03-16</time>
     
   </p>
 </header>
@@ -100,16 +115,56 @@
 		
 		</div>
 		
-		  
+		<p>#典型情况下生命周期</p>
+<pre><code>1. onCreate：做初始化操作，如界面布局资源、所需数据
+2. onRestart：从不可见到可见状态时调用
+3. onStart：正在被启动，已经可见了，但是还没有交互功能。即Activity显示出来了但是我们看不到
+4. onResume：表示Activity已经可见并到了前台
+5. onPause：可以做数据的存储、动画停止操作，但是不能耗时，因为后面的Activity会在前一个Activity完成onPause后才会调用onResume
+6. onStop：即将停止，可以做重量级的回收工作，但是也不能太耗时
+7. onDestroy：声明周期的最后一个回调，做资源释放或回收
+</code></pre><p>第一次启动：1-&gt;3-&gt;4<br>打开新Activity或者回到桌面：5-&gt;6<br>再次回到Activity：2-&gt;3-&gt;4<br>back回退：5-&gt;6&gt;7</p>
+<p>#异常情况下生命周期</p>
+<pre><code>1. 相关资源系统配置发生改变：系统会调用onSaveInstanceState，在onStop之前，跟onPause顺序不定，只会出现在一场情况发生的时候；当Activity被重建后，系统会调用onRestoreInstanceState，并且将Bundle中存的数据给onCreate和onRestoreInstanceState。onRestoreInstanceState在onStart后调用。每个View都有onSaveInstanceState和onRestoreInstanceState，可以确定不同的view需要保存哪些数据
+2. 内存不足导致优先级低的Activity被杀死：顺序如上。系统会按照优先级顺序杀死进程，因此后台运行的进程最好放入Service
+</code></pre><p>###Activity优先级<br>     highest：前台Activity<br>     middle：可见非前台<br>     lowest：后台</p>
+<p>###防止配置改变销毁Activity<br>     可以在manifest中指定如android:configChanges=”orientation|keyboardHidden”，这样就不会因为配置改变被重启了</p>
+<p>#Activity的启动模式 </p>
+<pre><code>1. standard 默认模式，每次新建一个，谁启动就在谁的栈里，比如service启动一个标准模式的Activity会报错，这是因为非Activity的Context没有任务栈，需要加一个flag：FLAG_ACTIVITY_NEW_TASK，创建一个新的任务栈
+2. singleTop 栈顶复用，如果在栈顶则不会被重建，onNewIntent会被调用。如果位于栈顶，则不会onCreate和onStart
+3. singleTask 栈内复用模式，单实例模式，一个任务栈只存在一个，onNewIntent会被调用。如果已经存在，则不会onCreate和onStart。如果A在S1栈中，则调用A，A会存在S1，否则会新建一个栈S2。ADBC，当启动D后，变为AD，BC出栈。
+4. singleInstance 单实例模式，加强版singleTask，当A存在S1中，则不会存在其他Activity
+</code></pre><p>###任务栈：分为前台任务栈和后台任务栈<br>TaskAffinity参数标识Activity所需任务栈。默认情况，都是包名，单独指定后必须不能和包名相同。<br>通常与singleTask启动模式或者allowTaskReparenting配对使用<br>singleTask配对使用：与TaskAffinity在一个同名任务栈中<br>allowTaskReparenting配对使用：应用A启动了应用B中的Activity C，返回桌面再点击B的图标，这时如果指定了TaskAffinity为B的包名，则显示的是C，而不会重新创建B</p>
+<p>#设定启动模式</p>
+<pre><code>1. 通过menifest的launchMode
+2. intent.addFlags()
+</code></pre><p>方式2优先级高于1,1无法设定FLAG_ACTIVITY_CLEAR_TOP,2不能指定singleInstance</p>
+<p>#Activity中的Flags，有点可以设定启动模式，还有可以影响运行状态</p>
+<pre><code>1. FLAG_ACTIVITY_NEW_TASK 指定singleTask模式
+2. FLAG_ACTIVITY_SINGLE_TOP 指定singleTop模式
+3. FLAG_ACTIVITY_CLEAR_TOP 将被启动Activity之上的Activity都出栈，包括standard启动的自身，通常与newTask模式配合使用
+4. FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS 不会出现在历史Activity中，相当于android：exludeFromRecents=&quot;true&quot;
+</code></pre><p>#IntentFilter匹配规则</p>
+<p>需要匹配action、category、data，一个activity可以有多个intent-filter</p>
+<pre><code>1. action 必须存在且与其中一个action相同
+2. category 如果带了category，只要匹配其中一个就行，如果不写会匹配android.intent.category.DEFAULT
+3. data 如果定义了data，就必须要来匹配。
+</code></pre><p>data分为两部分，mimeType和URI<br>data分为scheme、host、port、path。如果没有指定URI，URI默认的schema为content或file</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/随笔/">随笔</a>
+  <a class="article-category-link" href="/categories/Android进阶/">Android进阶</a>
 </div>
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/进阶/">进阶</a>
+  </div>
 
 </div>
 
@@ -117,7 +172,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://zpf8861.github.com/2016/02/27/关于自己/" data-title="关于自己 | 赵鹏飞" data-tsina="null" class="share clearfix">
+	  <div data-url="http://zpf8861.github.com/2016/03/16/【进阶】Activity生命周期和启动模式/" data-title="【进阶】Activity生命周期和启动模式 | 赵鹏飞" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -130,19 +185,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/02/28/Android开发经验/" title="Android开发经验">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Android开发经验</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/02/27/实现Android语音识别服务接口 RecognitionService的方法/"  title="实现Android语音识别服务接口 RecognitionService的方法">
+<a href="/2016/03/01/Android Wear数据同步机制总结/"  title="Android Wear 数据同步机制总结">
  <strong>下一篇：</strong><br/> 
- <span>实现Android语音识别服务接口 RecognitionService的方法
+ <span>Android Wear 数据同步机制总结
 </span>
 </a>
 </div>
