@@ -25,7 +25,7 @@
 3. onStart：正在被启动，已经可见了，但是还没有交互功能。即Activity显示出来了但是我们看不到
 4. onResume：表示Activity已经可见并到了前台
 5. onPause：可以做数据的存储、动画停止操作，但是不能耗时，因为后面的Activit">
-<meta property="og:updated_time" content="2016-03-16T04:08:05.156Z">
+<meta property="og:updated_time" content="2016-03-16T04:11:52.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【进阶】Activity生命周期和启动模式">
 <meta name="twitter:description" content="典型情况下生命周期1. onCreate：做初始化操作，如界面布局资源、所需数据
@@ -99,7 +99,7 @@
 		<a href="/about" title="赵鹏飞" target="_blank" itemprop="author">赵鹏飞</a>
 		
   <p class="article-time">
-    <time datetime="2016-03-16T04:08:05.156Z" itemprop="datePublished"> 发表于 2016-03-16</time>
+    <time datetime="2016-03-16T04:11:52.249Z" itemprop="datePublished"> 发表于 2016-03-16</time>
     
   </p>
 </header>
@@ -108,7 +108,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#典型情况下生命周期"><span class="toc-number">1.</span> <span class="toc-text">典型情况下生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异常情况下生命周期"><span class="toc-number">2.</span> <span class="toc-text">异常情况下生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Activity优先级"><span class="toc-number">2.0.1.</span> <span class="toc-text">Activity优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防止配置改变销毁Activity"><span class="toc-number">2.0.2.</span> <span class="toc-text">防止配置改变销毁Activity</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Activity的启动模式"><span class="toc-number">3.</span> <span class="toc-text">Activity的启动模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#任务栈：分为前台任务栈和后台任务栈"><span class="toc-number">3.0.1.</span> <span class="toc-text">任务栈：分为前台任务栈和后台任务栈</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设定启动模式"><span class="toc-number">4.</span> <span class="toc-text">设定启动模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Activity中的Flags，有点可以设定启动模式，还有可以影响运行状态"><span class="toc-number">5.</span> <span class="toc-text">Activity中的Flags，有点可以设定启动模式，还有可以影响运行状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IntentFilter匹配规则"><span class="toc-number">6.</span> <span class="toc-text">IntentFilter匹配规则</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#典型情况下生命周期"><span class="toc-number">1.</span> <span class="toc-text">典型情况下生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异常情况下生命周期"><span class="toc-number">2.</span> <span class="toc-text">异常情况下生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Activity优先级"><span class="toc-number">2.1.</span> <span class="toc-text">Activity优先级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#防止配置改变销毁Activity"><span class="toc-number">2.2.</span> <span class="toc-text">防止配置改变销毁Activity</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Activity的启动模式"><span class="toc-number">3.</span> <span class="toc-text">Activity的启动模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#任务栈：分为前台任务栈和后台任务栈"><span class="toc-number">3.1.</span> <span class="toc-text">任务栈：分为前台任务栈和后台任务栈</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设定启动模式"><span class="toc-number">4.</span> <span class="toc-text">设定启动模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Activity中的Flags，有点可以设定启动模式，还有可以影响运行状态"><span class="toc-number">5.</span> <span class="toc-text">Activity中的Flags，有点可以设定启动模式，还有可以影响运行状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IntentFilter匹配规则"><span class="toc-number">6.</span> <span class="toc-text">IntentFilter匹配规则</span></a></li></ol>
 		
 		</div>
 		
@@ -122,15 +122,15 @@
 </code></pre><p>第一次启动：1-&gt;3-&gt;4<br>打开新Activity或者回到桌面：5-&gt;6<br>再次回到Activity：2-&gt;3-&gt;4<br>back回退：5-&gt;6&gt;7</p>
 <h1 id="异常情况下生命周期"><a href="#异常情况下生命周期" class="headerlink" title="异常情况下生命周期"></a>异常情况下生命周期</h1><pre><code>1. 相关资源系统配置发生改变：系统会调用onSaveInstanceState，在onStop之前，跟onPause顺序不定，只会出现在一场情况发生的时候；当Activity被重建后，系统会调用onRestoreInstanceState，并且将Bundle中存的数据给onCreate和onRestoreInstanceState。onRestoreInstanceState在onStart后调用。每个View都有onSaveInstanceState和onRestoreInstanceState，可以确定不同的view需要保存哪些数据
 2. 内存不足导致优先级低的Activity被杀死：顺序如上。系统会按照优先级顺序杀死进程，因此后台运行的进程最好放入Service
-</code></pre><h3 id="Activity优先级"><a href="#Activity优先级" class="headerlink" title="Activity优先级"></a>Activity优先级</h3><pre><code>highest：前台Activity
+</code></pre><h2 id="Activity优先级"><a href="#Activity优先级" class="headerlink" title="Activity优先级"></a>Activity优先级</h2><pre><code>highest：前台Activity
 middle：可见非前台
 lowest：后台
-</code></pre><h3 id="防止配置改变销毁Activity"><a href="#防止配置改变销毁Activity" class="headerlink" title="防止配置改变销毁Activity"></a>防止配置改变销毁Activity</h3><pre><code>可以在manifest中指定如android:configChanges=&quot;orientation|keyboardHidden&quot;，这样就不会因为配置改变被重启了
+</code></pre><h2 id="防止配置改变销毁Activity"><a href="#防止配置改变销毁Activity" class="headerlink" title="防止配置改变销毁Activity"></a>防止配置改变销毁Activity</h2><pre><code>可以在manifest中指定如android:configChanges=&quot;orientation|keyboardHidden&quot;，这样就不会因为配置改变被重启了
 </code></pre><h1 id="Activity的启动模式"><a href="#Activity的启动模式" class="headerlink" title="Activity的启动模式"></a>Activity的启动模式</h1><pre><code>1. standard 默认模式，每次新建一个，谁启动就在谁的栈里，比如service启动一个标准模式的Activity会报错，这是因为非Activity的Context没有任务栈，需要加一个flag：FLAG_ACTIVITY_NEW_TASK，创建一个新的任务栈
 2. singleTop 栈顶复用，如果在栈顶则不会被重建，onNewIntent会被调用。如果位于栈顶，则不会onCreate和onStart
 3. singleTask 栈内复用模式，单实例模式，一个任务栈只存在一个，onNewIntent会被调用。如果已经存在，则不会onCreate和onStart。如果A在S1栈中，则调用A，A会存在S1，否则会新建一个栈S2。ADBC，当启动D后，变为AD，BC出栈。
 4. singleInstance 单实例模式，加强版singleTask，当A存在S1中，则不会存在其他Activity
-</code></pre><h3 id="任务栈：分为前台任务栈和后台任务栈"><a href="#任务栈：分为前台任务栈和后台任务栈" class="headerlink" title="任务栈：分为前台任务栈和后台任务栈"></a>任务栈：分为前台任务栈和后台任务栈</h3><p>TaskAffinity参数标识Activity所需任务栈。默认情况，都是包名，单独指定后必须不能和包名相同。<br>通常与singleTask启动模式或者allowTaskReparenting配对使用<br>singleTask配对使用：与TaskAffinity在一个同名任务栈中<br>allowTaskReparenting配对使用：应用A启动了应用B中的Activity C，返回桌面再点击B的图标，这时如果指定了TaskAffinity为B的包名，则显示的是C，而不会重新创建B</p>
+</code></pre><h2 id="任务栈：分为前台任务栈和后台任务栈"><a href="#任务栈：分为前台任务栈和后台任务栈" class="headerlink" title="任务栈：分为前台任务栈和后台任务栈"></a>任务栈：分为前台任务栈和后台任务栈</h2><p>TaskAffinity参数标识Activity所需任务栈。默认情况，都是包名，单独指定后必须不能和包名相同。<br>通常与singleTask启动模式或者allowTaskReparenting配对使用<br>singleTask配对使用：与TaskAffinity在一个同名任务栈中<br>allowTaskReparenting配对使用：应用A启动了应用B中的Activity C，返回桌面再点击B的图标，这时如果指定了TaskAffinity为B的包名，则显示的是C，而不会重新创建B</p>
 <h1 id="设定启动模式"><a href="#设定启动模式" class="headerlink" title="设定启动模式"></a>设定启动模式</h1><pre><code>1. 通过menifest的launchMode
 2. intent.addFlags()
 </code></pre><p>方式2优先级高于1,1无法设定FLAG_ACTIVITY_CLEAR_TOP,2不能指定singleInstance</p>
@@ -197,7 +197,7 @@ lowest：后台
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#典型情况下生命周期"><span class="toc-number">1.</span> <span class="toc-text">典型情况下生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异常情况下生命周期"><span class="toc-number">2.</span> <span class="toc-text">异常情况下生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Activity优先级"><span class="toc-number">2.0.1.</span> <span class="toc-text">Activity优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防止配置改变销毁Activity"><span class="toc-number">2.0.2.</span> <span class="toc-text">防止配置改变销毁Activity</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Activity的启动模式"><span class="toc-number">3.</span> <span class="toc-text">Activity的启动模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#任务栈：分为前台任务栈和后台任务栈"><span class="toc-number">3.0.1.</span> <span class="toc-text">任务栈：分为前台任务栈和后台任务栈</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设定启动模式"><span class="toc-number">4.</span> <span class="toc-text">设定启动模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Activity中的Flags，有点可以设定启动模式，还有可以影响运行状态"><span class="toc-number">5.</span> <span class="toc-text">Activity中的Flags，有点可以设定启动模式，还有可以影响运行状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IntentFilter匹配规则"><span class="toc-number">6.</span> <span class="toc-text">IntentFilter匹配规则</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#典型情况下生命周期"><span class="toc-number">1.</span> <span class="toc-text">典型情况下生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异常情况下生命周期"><span class="toc-number">2.</span> <span class="toc-text">异常情况下生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Activity优先级"><span class="toc-number">2.1.</span> <span class="toc-text">Activity优先级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#防止配置改变销毁Activity"><span class="toc-number">2.2.</span> <span class="toc-text">防止配置改变销毁Activity</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Activity的启动模式"><span class="toc-number">3.</span> <span class="toc-text">Activity的启动模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#任务栈：分为前台任务栈和后台任务栈"><span class="toc-number">3.1.</span> <span class="toc-text">任务栈：分为前台任务栈和后台任务栈</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设定启动模式"><span class="toc-number">4.</span> <span class="toc-text">设定启动模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Activity中的Flags，有点可以设定启动模式，还有可以影响运行状态"><span class="toc-number">5.</span> <span class="toc-text">Activity中的Flags，有点可以设定启动模式，还有可以影响运行状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IntentFilter匹配规则"><span class="toc-number">6.</span> <span class="toc-text">IntentFilter匹配规则</span></a></li></ol>
  
   </div>
 
