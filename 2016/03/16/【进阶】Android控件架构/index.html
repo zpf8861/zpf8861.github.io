@@ -4,23 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>赵鹏飞</title>
+    <title>【进阶】Android控件架构 | 赵鹏飞</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="赵鹏飞">
     
 
     
-    <meta name="description" content="Android php 篮球">
+    <meta name="description" content="Android中的控件包括View控件和ViewGroup控件。每个Activity都包含一个Window对象，主要有PhoneWindow来实现，将一个DecorView当作根View，View的监听事件通过WindowmanagerService进行。一个DecorView包括两部分，ActionBar和FrameLayout。
+View测量Android的View测量在onMeasure()">
 <meta property="og:type" content="article">
-<meta property="og:title" content="赵鹏飞">
-<meta property="og:url" content="http://zpf8861.github.com/2016/03/01/Android性能优化——内存优化/index.html">
+<meta property="og:title" content="【进阶】Android控件架构">
+<meta property="og:url" content="http://zpf8861.github.com/2016/03/16/【进阶】Android控件架构/index.html">
 <meta property="og:site_name" content="赵鹏飞">
-<meta property="og:description" content="Android php 篮球">
-<meta property="og:updated_time" content="2016-03-01T01:48:54.287Z">
+<meta property="og:description" content="Android中的控件包括View控件和ViewGroup控件。每个Activity都包含一个Window对象，主要有PhoneWindow来实现，将一个DecorView当作根View，View的监听事件通过WindowmanagerService进行。一个DecorView包括两部分，ActionBar和FrameLayout。
+View测量Android的View测量在onMeasure()">
+<meta property="og:updated_time" content="2016-03-16T12:20:17.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="赵鹏飞">
-<meta name="twitter:description" content="Android php 篮球">
+<meta name="twitter:title" content="【进阶】Android控件架构">
+<meta name="twitter:description" content="Android中的控件包括View控件和ViewGroup控件。每个Activity都包含一个Window对象，主要有PhoneWindow来实现，将一个DecorView当作根View，View的监听事件通过WindowmanagerService进行。一个DecorView包括两部分，ActionBar和FrameLayout。
+View测量Android的View测量在onMeasure()">
 
     
     <link rel="alternative" href="/atom.xml" title="赵鹏飞" type="application/atom+xml">
@@ -80,14 +83,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/03/01/Android性能优化——内存优化/" title="" itemprop="url"></a>
+      <a href="/2016/03/16/【进阶】Android控件架构/" title="【进阶】Android控件架构" itemprop="url">【进阶】Android控件架构</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="赵鹏飞" target="_blank" itemprop="author">赵鹏飞</a>
 		
   <p class="article-time">
-    <time datetime="2016-03-01T01:48:54.290Z" itemprop="datePublished"> 发表于 2016-03-01</time>
+    <time datetime="2016-03-16T12:20:17.531Z" itemprop="datePublished"> 发表于 2016-03-16</time>
     
   </p>
 </header>
@@ -96,15 +99,33 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#View测量"><span class="toc-number">1.</span> <span class="toc-text">View测量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MeasureSpec类"><span class="toc-number">1.1.</span> <span class="toc-text">MeasureSpec类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测量模式"><span class="toc-number">1.2.</span> <span class="toc-text">测量模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#View的绘制"><span class="toc-number">2.</span> <span class="toc-text">View的绘制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ViewGroup测量"><span class="toc-number">3.</span> <span class="toc-text">ViewGroup测量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ViewGroup绘制"><span class="toc-number">4.</span> <span class="toc-text">ViewGroup绘制</span></a></li></ol>
 		
 		</div>
 		
-		  
+		<p>Android中的控件包括View控件和ViewGroup控件。每个Activity都包含一个Window对象，主要有PhoneWindow来实现，将一个DecorView当作根View，View的监听事件通过WindowmanagerService进行。<br>一个DecorView包括两部分，ActionBar和FrameLayout。</p>
+<h1 id="View测量"><a href="#View测量" class="headerlink" title="View测量"></a>View测量</h1><p>Android的View测量在onMeasure()方法中进行</p>
+<h2 id="MeasureSpec类"><a href="#MeasureSpec类" class="headerlink" title="MeasureSpec类"></a>MeasureSpec类</h2><p>这个类似32位的int值，高两位是测量模式，有三种模式。</p>
+<h2 id="测量模式"><a href="#测量模式" class="headerlink" title="测量模式"></a>测量模式</h2><ul>
+<li>EXACTLY 精确模式，如指定了layout_width</li>
+<li>AT_MOST 最大值模式，如设定了wrap_content</li>
+<li>UNSPECIFIED 自定义View时使用<h1 id="View的绘制"><a href="#View的绘制" class="headerlink" title="View的绘制"></a>View的绘制</h1>调用onDraw()，使用Canvas进行绘制。通过改变bitmap，重绘，刷新View。<h1 id="ViewGroup测量"><a href="#ViewGroup测量" class="headerlink" title="ViewGroup测量"></a>ViewGroup测量</h1>遍历子view，获得大小并将子view放置在相应位置上，即onLayout，自定义ViewGroup时候，通常需要自定义onLayout<h1 id="ViewGroup绘制"><a href="#ViewGroup绘制" class="headerlink" title="ViewGroup绘制"></a>ViewGroup绘制</h1>ViewGroup如果不是画背景，基本不会调用onDraw，而是通过dispatchDraw绘制子View</li>
+</ul>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android进阶/">Android进阶</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/进阶/">进阶</a>
+  </div>
 
 </div>
 
@@ -112,7 +133,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://zpf8861.github.com/2016/03/01/Android性能优化——内存优化/" data-title="赵鹏飞" data-tsina="null" class="share clearfix">
+	  <div data-url="http://zpf8861.github.com/2016/03/16/【进阶】Android控件架构/" data-title="【进阶】Android控件架构 | 赵鹏飞" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -125,19 +146,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/03/01/Android Wear数据同步机制总结/" title="Android Wear 数据同步机制总结">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Android Wear 数据同步机制总结</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/02/28/Android开发经验/"  title="Android开发经验">
+<a href="/2016/03/16/【进阶】Activity生命周期和启动模式/"  title="【进阶】Activity生命周期和启动模式">
  <strong>下一篇：</strong><br/> 
- <span>Android开发经验
+ <span>【进阶】Activity生命周期和启动模式
 </span>
 </a>
 </div>
@@ -152,7 +165,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#View测量"><span class="toc-number">1.</span> <span class="toc-text">View测量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MeasureSpec类"><span class="toc-number">1.1.</span> <span class="toc-text">MeasureSpec类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测量模式"><span class="toc-number">1.2.</span> <span class="toc-text">测量模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#View的绘制"><span class="toc-number">2.</span> <span class="toc-text">View的绘制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ViewGroup测量"><span class="toc-number">3.</span> <span class="toc-text">ViewGroup测量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ViewGroup绘制"><span class="toc-number">4.</span> <span class="toc-text">ViewGroup绘制</span></a></li></ol>
  
   </div>
 
@@ -170,7 +183,7 @@
 		  
 		
 		  
-			<li><a href="/categories/Android进阶/" title="Android进阶">Android进阶<sup>1</sup></a></li>
+			<li><a href="/categories/Android进阶/" title="Android进阶">Android进阶<sup>2</sup></a></li>
 		  
 		
 		  
@@ -199,15 +212,15 @@
 			
 		
 			
+				<li><a href="/tags/进阶/" title="进阶">进阶<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Android-Wear/" title="Android Wear">Android Wear<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/进阶/" title="进阶">进阶<sup>1</sup></a></li>
 			
 		
 			
